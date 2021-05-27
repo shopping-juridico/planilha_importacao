@@ -34,11 +34,43 @@ def valida_coluna(pam):
             else:
                 cell.fill = redFill
                 print('CPF inválido')
-        #else:
+        if cell.value is None: 
+            #for ws.cell(row=cell.row, column=14): 
+            for cell in ws['N']:
+                if 'S/A' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'LTDA' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'CIA' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'COMPANH' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'COND' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'ASSOCI' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'SEGUR' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill 
+                elif '-' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill
+                elif 'INSTI' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill                      
+                elif 'ADVO' in cell.value:
+                    #print(cell.value)        
+                    cell.fill = redFill 
 
 def main():
-    valida_coluna(pam='S')
     valida_coluna(pam='P')
+    valida_coluna(pam='S')
 
 main()
 
