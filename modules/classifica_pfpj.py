@@ -1,17 +1,17 @@
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 
-wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
+def classifica_pfpj(pam1):
 
-ws = wb.active
+    wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
 
-redFill = PatternFill(start_color='FFFF0000',
-                   end_color='FFFF0000',
-                   fill_type='solid')
+    ws = wb.active
 
-def classifica_pfpj(pam):
+    redFill = PatternFill(start_color='FFFF0000',
+                    end_color='FFFF0000',
+                    fill_type='solid')
 
-    for cell in ws['{}'.format(pam)]:
+    for cell in ws['{}'.format(pam1)]:
         if 'S/A' in cell.value:
             a = cell.row
             b = 17
@@ -83,6 +83,4 @@ def classifica_pfpj(pam):
             c.value = 'PJ'
             print(c.value)
 
-classifica_pfpj(pam='N')
-
-wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
+    wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")

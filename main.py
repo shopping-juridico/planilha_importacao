@@ -1,17 +1,40 @@
-from openpyxl import load_workbook
-from openpyxl.styles import PatternFill
-from method import valida_coluna, classifica_pfpj
+from modules.valida_coluna import valida_coluna
+from modules.classifica_pfpj import classifica_pfpj
 
-wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
+print("----------------------------------------------")
+print("VALIDADOR SJ - PLANILHA DE IMPORTAÇÃO - V0.6 |")
+print("----------------------------------------------")
+print("O que você quer validar?                     *")
+print("                                             *")
+print("1 - CPF/CNPJ - Cliente                       *")
+print("2 - CPF/CNPJ - Contrário                     *")
+print("3 - Classificar PF/PJ - Cliente              *")
+print("4 - Tudo                                     *")
+print("**********************************************")
 
-ws = wb.active
+opcao = 0
+while opcao != 1 and opcao != 2 and opcao !=3 and opcao !=4:
+    opcao = int(input("Opção: "))
+    print("-----------------------------------------------------")
+    if opcao != 1 and opcao != 2 and opcao !=3 and opcao !=4:
+        print("Opção inválida!")
 
-redFill = PatternFill(start_color='FFFF0000',
-                   end_color='FFFF0000',
-                   fill_type='solid')
+if opcao == 1:
+    valida_coluna(pam2='P')
+    print()
+    print("CPF/CNPJ de clientes validados!")
+if opcao == 2:
+    valida_coluna(pam2='S')
+    print()
+    print("CPF/CNPJ de contrários validados!")    
+if opcao == 3:
+    classifica_pfpj(pam1='N')
+    print()
+    print("Clientes classificados em PF/PJ!") 
+if opcao == 4:
+    valida_coluna(pam2='P')
+    valida_coluna(pam2='S')
+    classifica_pfpj(pam1='N')
 
-valida_coluna(pam2='P')
-valida_coluna(pam2='S')
-classifica_pfpj(pam1='N')
 
-wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
+

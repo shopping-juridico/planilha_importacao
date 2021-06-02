@@ -1,18 +1,18 @@
 from openpyxl import load_workbook
-from validacpf import ValidaCpf
-from validacnpj import ValidaCnpj
-from openpyxl.styles import Color, PatternFill
-
-wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
-
-ws = wb.active
-
-redFill = PatternFill(start_color='FFFF0000',
-                   end_color='FFFF0000',
-                   fill_type='solid')
+from modules.validacpf import ValidaCpf
+from modules.validacnpj import ValidaCnpj
+from openpyxl.styles import PatternFill
 
 def valida_coluna(pam2):
     
+    wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
+
+    ws = wb.active
+
+    redFill = PatternFill(start_color='FFFF0000',
+                    end_color='FFFF0000',
+                    fill_type='solid')
+        
     for cell in ws['{}'.format(pam2)]:
         if(cell.value is not None):
             if cell.value == "Contrário Principal - CPF/CNPJ":
@@ -34,7 +34,4 @@ def valida_coluna(pam2):
                 print('CPF inválido')
         #if cell.value is None:
 
-valida_coluna(pam2='P')
-valida_coluna(pam2='S')
-
-wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
+    wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
