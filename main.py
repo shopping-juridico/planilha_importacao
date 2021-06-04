@@ -15,9 +15,9 @@ print("**********************************************")
 opcao = 0
 while opcao != 1 and opcao != 2 and opcao !=3 and opcao !=4:
     opcao = int(input("Opção: "))
-    print("-----------------------------------------------------")
+    print("----------------------------------------------")
     if opcao != 1 and opcao != 2 and opcao !=3 and opcao !=4:
-        print("Opção inválida!")
+        print("Opção inválida! Tente novamente.")
 
 if opcao == 1:
     valida_coluna(pam2='P')
@@ -35,6 +35,4 @@ if opcao == 4:
     valida_coluna(pam2='P')
     valida_coluna(pam2='S')
     classifica_pfpj(pam1='N')
-
-
 
