@@ -1,4 +1,5 @@
 #!/bin/bash
 
 source bin/activate
-python3 main.py
+
+pip3 install openpyxl
