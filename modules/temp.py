@@ -22,4 +22,4 @@ for cell in ws['R']:
         c.value = 'PJ'
         print(c.value)
         
-wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
+wb.save("importacao_format.xlsx")

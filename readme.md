@@ -81,26 +81,39 @@ sudo apt install pip3
 
 - Configurando o venv para isolar dependências
 
+Linux:
 ```
-mkdir planilha importacao
-cd planilha\ importacao
-python3 -m venv env
+mkdir projetos
+cd projetos
+python3 -m venv planilha_importacao
 ```
-OBS: a utilização de um ambiente de desenvolvimento, além de organizar melhor o projeto, isola as dependências e bibliotecas para que não haja interf>
+
+Windows:
+```
+mkdir projetos
+cd projetos
+py -m venv planilha_importacao
+```
+
+OBS: a utilização de um ambiente de desenvolvimento, além de organizar melhor o projeto, isola as dependências e bibliotecas para que não haja interferência e problemas com outros pacotes do sistema.
+
 
 - Ativando o ambiente
 
-Fora do diretório do projeto, ou seja, em /home/projetos
+- Ativando o ambiente
 
+Dentro da pasta do projeto:
+
+Linux:
 ```
-source planilha\ importacao/bin/activate
+source /bin/activate
 ```
 
-depois, para eventualmente compilar o arquivo:
+Windows:
+```
+.\Scripts\activate
+```
 
-```
-cd planilha\ importacao
-```
 
 ### 3.2 Bibliotecas
 
@@ -110,11 +123,12 @@ cd planilha\ importacao
 pip3 install openpyxl
 ```
 
-- Instalação da biblioteca pandas (para manipulação de dados em planilha):
+Para congelar o ambiente com todas as bibliotecas necessárias:
 
 ```
-pip3 install pandas
+pip freeze > requirements.txt
 ```
+
 ### 3.3 Desenvolvendo
 
 - Exportação de dados do CP-PRO para arquivo .xlsx;
@@ -132,17 +146,72 @@ pip3 install pandas
 
 > Compactar a pasta do projeto "planilha importacao" para o formato .zip e disponibilizar o arquivo para os outros usuários.
 
+
+> Fazer o download do arquivo .zip disponível no link: https://github.com/shopping-juridico/planilha_importacao. Ou executar o comando abaixo:
+
+```
+git clone https://github.com/shopping-juridico/planilha_importacao.git
+```
+
 Desde que o usuário tenha Python instalado no sistema:
 
 1. Descompactar a pasta;
 2. Colar dentro dela os arquivos .xlsx com dados brutos;
-3. Abrir o terminal dentro do diretório "planilha importacao" e executar o comando:
+3. Abrir o terminal dentro do diretório "planilha importacao" e executar os comandos:
+
+Se necessário (em caso de portabilidade entre SO), criar novamente o ambiente virtual com o mesmo nome da pasta:
+
+Linux:
 ```
-python3 planilha\ importacao.py
+python3 -m venv planilha_importacao-****
 ```
+
+Windows:
+```
+py -m venv planilha_importacao-****
+```
+
+Ativar o ambiente:
+
+Linux:
+```
+source /bin/activate
+```
+
+Windows:
+```
+.\Scripts\activate
+```
+
+Instalar a bilbioteca:
+
+```
+pip3 install openpyxl
+```
+
+Executar o programa:
+
+```
+python3 main.py
+```
+
+OBS: Se necessário, instalar as bibliotecas pelo comando:
+
+```
+pip install -r requirements.txt
+```
+
+Após a instalação, o programa pode ser executado sempre a partir do script.
 
 ### 4.2 Método arquivo executável
 
+Script de instalação.
+
+Todo o procedimento de instalação descrito no item 3.1 deve ser automatizado para scripts executáveis em cada SO.
+
+Script de utilização.
+
+Para abrir o programa, basta executar um script devidamente configurado.
 
 ### 4.3 Método interface gráfica
 

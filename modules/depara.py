@@ -33,4 +33,4 @@ def depara_orgao(pam3):
                     cell.value = "TJ"
                     print(cell, cell.value)
 
-    wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
+    wb.save("importacao_format.xlsx")

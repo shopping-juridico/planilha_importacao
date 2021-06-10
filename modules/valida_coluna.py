@@ -34,4 +34,4 @@ def valida_coluna(pam2):
                 print('CPF inválido')
         #if cell.value is None:
 
-    wb.save("/home/vitor/projetos/planilha_importacao/importacao_format.xlsx")
+    wb.save("importacao_format.xlsx")
