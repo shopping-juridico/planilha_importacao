@@ -4,7 +4,7 @@ from openpyxl.styles import Color, PatternFill
 from validacpf import ValidaCpf
 from validacnpj import ValidaCnpj
 
-wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
+wb = load_workbook('excel files/Importação de processos (Aberto) Corrigido.xlsx')
 
 ws = wb.active
 
@@ -22,4 +22,4 @@ for cell in ws['R']:
         c.value = 'PJ'
         print(c.value)
         
-wb.save("importacao_format.xlsx")
+wb.save("excel files/importacao_format.xlsx")

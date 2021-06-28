@@ -5,7 +5,7 @@ from openpyxl.styles import PatternFill
 
 def valida_coluna(pam2):
     
-    wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
+    wb = load_workbook('excel files/Importação de processos (Aberto) Corrigido.xlsx')
 
     ws = wb.active
 
@@ -34,4 +34,4 @@ def valida_coluna(pam2):
                 print('CPF inválido')
         #if cell.value is None:
 
-    wb.save("importacao_format.xlsx")
+    wb.save("excel files/importacao_format.xlsx")

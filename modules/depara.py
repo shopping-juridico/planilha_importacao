@@ -11,7 +11,7 @@ def fatia(num_cnj):
 
 def depara_orgao(pam3):
     
-    wb = load_workbook('Importação de processos (Aberto) Corrigido.xlsx')
+    wb = load_workbook('excel files/Importação de processos (Aberto) Corrigido.xlsx')
 
     ws = wb.active
     
@@ -33,4 +33,4 @@ def depara_orgao(pam3):
                     cell.value = "TJ"
                     print(cell, cell.value)
 
-    wb.save("importacao_format.xlsx")
+    wb.save("excel files/importacao_format.xlsx")
