@@ -19,13 +19,13 @@ A partir do CP-PRO, é exportada uma planilha com dados do banco do escritório 
 **1.4** Ajustes e formatação dos dados
 * Para que a importação ocorra sem erros e o sistema reconheça as informações, são necessários ajustes de formatação que muitas vezes envolve corrigir erros de inserção de dados.
 
-----------------	
+----------------
 ## 2. Problemas a serem avaliados
 
 **2.1 PF/PJ**
 * Células vazias -> precisa definir Pessoa Física ou Pessoa Jurídica
 * Como é feito: Filtro no campo CPF/CNPJ: 'vazio' -> filtro no nome por parâmetros que identifiquem como CNPJ (s/a, bancos, cond)
-	
+
 **2.2 Validação CPF**	
 * O sistema não reconhece se o CPF for inválido;
 * O que deve ser feito:
@@ -33,13 +33,13 @@ A partir do CP-PRO, é exportada uma planilha com dados do banco do escritório 
   - Se for valido: Ok
   - Se for inválido: deixar em branco e identificar pf/pj a partir de "1"
   - Se for inválido: substituir pela forma válida -> automaticamente o sistema identifica PF ou PJ
-	
+
 **2.3 Depara de órgão**	
 * Reconhecer o número e incluir o órgão correspondente;
 
 **2.4 Padrão de capitalização de nomes**
 * Incluir primeira letra maiúscula / preposições em minúsculo;
-	
+
 **2.5 Campos tabelados**
 * Informações têm que ser idênticas às do L1 (acentos, caixa alta)
 
@@ -47,7 +47,7 @@ A partir do CP-PRO, é exportada uma planilha com dados do banco do escritório 
 * UF correspondente Cidade
 * Utilizar a tabela do L1 como base
 
-----------------	
+----------------
 ## 3. Planejando
 
 O algoritmo foi desenvolvido em sistema Linux, Ubuntu 20.04 versão LTS.
@@ -83,22 +83,19 @@ sudo apt install pip3
 
 Linux:
 ```
-mkdir projetos
-cd projetos
-python3 -m venv planilha_importacao
+mkdir planilha_importacao
+cd planilha_importacao
+python3 -m venv env
 ```
 
 Windows:
 ```
-mkdir projetos
-cd projetos
-py -m venv planilha_importacao
+mkdir planilha_importacao
+cd planilha_importacao
+py -m venv env
 ```
 
 OBS: a utilização de um ambiente de desenvolvimento, além de organizar melhor o projeto, isola as dependências e bibliotecas para que não haja interferência e problemas com outros pacotes do sistema.
-
-
-- Ativando o ambiente
 
 - Ativando o ambiente
 
@@ -106,12 +103,12 @@ Dentro da pasta do projeto:
 
 Linux:
 ```
-source /bin/activate
+source env/bin/activate
 ```
 
 Windows:
 ```
-.\Scripts\activate
+.\env\Scripts\activate
 ```
 
 
@@ -144,9 +141,6 @@ pip freeze > requirements.txt
 
 ### 4.1 Método simples
 
-> Compactar a pasta do projeto "planilha importacao" para o formato .zip e disponibilizar o arquivo para os outros usuários.
-
-
 > Fazer o download do arquivo .zip disponível no link: https://github.com/shopping-juridico/planilha_importacao. Ou executar o comando abaixo:
 
 ```
@@ -163,24 +157,24 @@ Se necessário (em caso de portabilidade entre SO), criar novamente o ambiente v
 
 Linux:
 ```
-python3 -m venv planilha_importacao-****
+python3 -m venv env
 ```
 
 Windows:
 ```
-py -m venv planilha_importacao-****
+py -m venv env
 ```
 
 Ativar o ambiente:
 
 Linux:
 ```
-source /bin/activate
+source env/bin/activate
 ```
 
 Windows:
 ```
-.\Scripts\activate
+.\env\Scripts\activate
 ```
 
 Instalar a bilbioteca:
@@ -205,13 +199,15 @@ Após a instalação, o programa pode ser executado sempre a partir do script.
 
 ### 4.2 Método arquivo executável
 
-Script de instalação.
+#### 3.2.1 Sistemas Linux:
 
-Todo o procedimento de instalação descrito no item 3.1 deve ser automatizado para scripts executáveis em cada SO.
+- Instalação: Dentro do diretório /install, executar o script 'instalação-linux.sh';
+- Utilização: Para abrir o software, executar o script 'executar-linux.sh'.
 
-Script de utilização.
+#### 3.2.2 Windows:
 
-Para abrir o programa, basta executar um script devidamente configurado.
+- Instalação: Dentro do diretório /install, executar o script 'instalação-windows.bat';
+- Utilização: Para abrir o software, executar o script 'executar-windows.bat'.
 
 ### 4.3 Método interface gráfica
 
