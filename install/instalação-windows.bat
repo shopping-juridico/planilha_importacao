@@ -1,4 +1,4 @@
-cmd /k "cd .. & py -m venv env & .\env\Scripts\activate & pip install openpyxl"
+cmd /k "cd .. & cd .. & py -m venv env & .\env\Scripts\activate & pip install openpyxl"
 
 echo.
 echo    ***********************************************
