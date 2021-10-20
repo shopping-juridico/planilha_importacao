@@ -3,7 +3,7 @@ from modules.validacpf import ValidaCpf
 from modules.validacnpj import ValidaCnpj
 from openpyxl.styles import PatternFill
 
-def valida_coluna(pam2, ws):
+def valida_coluna(pam2, pam3, ws):
 
     redFill = PatternFill(start_color='FFFF0000',
                     end_color='FFFF0000',
@@ -19,10 +19,14 @@ def valida_coluna(pam2, ws):
                 #a = 2
                 print('CPF válido')
                 #print(cell.value)
+                c = ws.cell(row=cell.row, column=pam3)
+                c.value = 'PF'
             elif cnpj.valida():
                 #a = 3
                 print('CNPJ válido')
                 #print(cell.value)
+                c = ws.cell(row=cell.row, column=pam3)
+                c.value = 'PJ'
             else:
                 cell.fill = redFill
                 print('CPF inválido')
