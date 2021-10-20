@@ -32,6 +32,8 @@ def valida_coluna(pam2):
             else:
                 cell.fill = redFill
                 print('CPF inválido')
-        #if cell.value is None:
+        if cell.value is None:
+            cell.fill = redFill
+            print("Campo vazio")
 
     wb.save("excel files/importacao_format.xlsx")

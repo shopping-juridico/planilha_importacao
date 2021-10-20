@@ -12,72 +12,72 @@ def classifica_pfpj(pam1):
                     fill_type='solid')
 
     for cell in ws['{}'.format(pam1)]:
-        if 'S/A' in cell.value:
+        if 'S/A' in cell.value or 'S/a' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
-        elif 'LTDA' in cell.value:
+        elif 'LTDA' in cell.value or 'Ltda' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
-        elif 'CIA' in cell.value:
+        elif ' CIA' in cell.value or ' Cia' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
-        elif 'COMPANH' in cell.value:
+        elif 'COMPANH' in cell.value or 'Companh' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
-        elif 'COND' in cell.value:
+        elif 'CONDOM' in cell.value or 'Condom' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
-        elif 'ASSOCI' in cell.value:
+        elif 'ASSOCIA' in cell.value or 'Associa' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
         elif 'SEGUR' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
         elif '-' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)
-        elif 'INSTI' in cell.value:
+        elif 'INSTI' in cell.value or 'Insti' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'
             print(c.value)                  
-        elif 'ADVO' in cell.value:
+        elif 'ADVO' in cell.value or 'Advo' in cell.value:
             a = cell.row
-            b = 17
+            b = 14
             #print(a, b)
             c = ws.cell(row=a, column=b)
             c.value = 'PJ'

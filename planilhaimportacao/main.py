@@ -22,15 +22,15 @@ while opcao != 1 and opcao != 2 and opcao !=3 and opcao !=4 and opcao !=5:
         print("Opção inválida! Tente novamente.")
 
 if opcao == 1:
-    valida_coluna(pam2='P')
+    valida_coluna(pam2='M')
     print()
     print("CPF/CNPJ de clientes validados!")
 if opcao == 2:
-    valida_coluna(pam2='S')
+    valida_coluna(pam2='P')
     print()
     print("CPF/CNPJ de contrários validados!")    
 if opcao == 3:
-    classifica_pfpj(pam1='N')
+    classifica_pfpj(pam1='K')
     print()
     print("Clientes classificados em PF/PJ!")
 if opcao == 4:
@@ -38,8 +38,8 @@ if opcao == 4:
     print()
     print("Órgãos classificados!") 
 if opcao == 5:
+    valida_coluna(pam2='M')
     valida_coluna(pam2='P')
-    valida_coluna(pam2='S')
-    classifica_pfpj(pam1='N')
+    classifica_pfpj(pam1='K')
     depara_orgao(pam3="Y")
 
