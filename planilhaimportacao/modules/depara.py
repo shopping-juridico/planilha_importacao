@@ -9,11 +9,7 @@ def fatia(num_cnj):
     #fatia_cinco = num_cnj[20:24]
     return fatia_quatro
 
-def depara_orgao(pam3):
-    
-    wb = load_workbook('excel files/Importação de processos (Aberto) Corrigido.xlsx')
-
-    ws = wb.active
+def depara_orgao(pam3, ws):
     
     for cell in ws["{}".format(pam3)]:
         if cell.value is None:
@@ -33,4 +29,4 @@ def depara_orgao(pam3):
                     cell.value = "TJ"
                     print(cell, cell.value)
 
-    wb.save("excel files/importacao_format.xlsx")
+    return ws

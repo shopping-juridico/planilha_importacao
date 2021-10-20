@@ -3,11 +3,7 @@ from modules.validacpf import ValidaCpf
 from modules.validacnpj import ValidaCnpj
 from openpyxl.styles import PatternFill
 
-def valida_coluna(pam2):
-    
-    wb = load_workbook('excel files/Importação de processos (Aberto) Corrigido.xlsx')
-
-    ws = wb.active
+def valida_coluna(pam2, ws):
 
     redFill = PatternFill(start_color='FFFF0000',
                     end_color='FFFF0000',
@@ -15,9 +11,7 @@ def valida_coluna(pam2):
         
     for cell in ws['{}'.format(pam2)]:
         if(cell.value is not None):
-            if cell.value == "Contrário Principal - CPF/CNPJ":
-                continue
-            if cell.value == "Cliente principal - CPF/CNPJ":
+            if cell.value == "Contrário principal - CPF/CNPJ" or cell.value == "Cliente principal - CPF/CNPJ":
                 continue
             cpf = ValidaCpf(cell.value)
             cnpj = ValidaCnpj(cell.value)
@@ -36,4 +30,4 @@ def valida_coluna(pam2):
             cell.fill = redFill
             print("Campo vazio")
 
-    wb.save("excel files/importacao_format.xlsx")
+    return ws
