@@ -1,0 +1,7 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        ".pytest_cache":true,
+    }
+}
